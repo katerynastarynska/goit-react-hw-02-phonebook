@@ -26,16 +26,11 @@ class App extends Component {
   };
 
   render() {
-    // const { name, number } = this.state;
-    {
-      console.log(this.state.contacts);
-    }
-    return (
+     return (
       <div>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
-        {/* <ContactList contacts={this.state.contacts} /> */}
         {this.state.contacts.length >= 1 && (
           <ContactList contacts={this.state.contacts} />
         )}
