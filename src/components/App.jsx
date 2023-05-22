@@ -1,16 +1,47 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import { Component } from 'react';
+
+import ContactForm from './ContactForm/ContactForm';
+import ContactList from './ContactList/ContactList';
+
+class App extends Component {
+  state = {
+    contacts: [],
+    filter: '',
+    // name: '',
+    // number: '',
+  };
+
+  addContact = data => {
+    console.log('....>>>> data >>>>', data);
+
+    const contact = {
+      name: data.name,
+      number: data.number,
+      id: data.id,
+    };
+
+    this.setState(prevState => ({
+      contacts: [contact, ...prevState.contacts],
+    }));
+  };
+
+  render() {
+    // const { name, number } = this.state;
+    {
+      console.log(this.state.contacts);
+    }
+    return (
+      <div>
+        <h1>Phonebook</h1>
+        <ContactForm onSubmit={this.addContact} />
+        <h2>Contacts</h2>
+        {/* <ContactList contacts={this.state.contacts} /> */}
+        {this.state.contacts.length >= 1 && (
+          <ContactList contacts={this.state.contacts} />
+        )}
+      </div>
+    );
+  }
+}
+
+export default App;
