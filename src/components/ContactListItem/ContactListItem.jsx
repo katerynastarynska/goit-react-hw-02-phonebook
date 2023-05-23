@@ -1,9 +1,9 @@
-
 export default function ContactListItem({ name, number }) {
-    return (
-        <div>
-            {name}: {number}
-        </div>
-        
-    )
+  return (
+    <div>
+      <p>
+        {name}: {number}
+      </p>
+    </div>
+  );
 }
