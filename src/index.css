@@ -8,18 +8,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 h1,
 h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(13, 85, 167);
 }
-
 ul,
 p {
   margin: 0;
