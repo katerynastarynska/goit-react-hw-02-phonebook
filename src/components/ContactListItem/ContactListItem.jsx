@@ -1,9 +1,9 @@
+import css from './ContactListItem.module.css';
+
 export default function ContactListItem({ name, number }) {
   return (
-    <div>
-      <p>
-        {name}: {number}
-      </p>
-    </div>
+    <p className={css.contactListText}>
+      {name}: {number}
+    </p>
   );
 }

@@ -1,5 +1,4 @@
 import { Component } from 'react';
-
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
@@ -13,14 +12,13 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    };
+  };
 
   addContact = ({ name, number, id }) => {
-    console.log('....>>>> data >>>>', name);
-
     const normalizedName = name.toLowerCase();
-    const isContactExist = this.state.contacts.some(contact => contact.name.toLowerCase() === normalizedName);
-    console.log(isContactExist);
+    const isContactExist = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === normalizedName
+    );
 
     if (!isContactExist) {
       const newContact = {
@@ -36,13 +34,12 @@ class App extends Component {
       window.alert(`${name} is already in contacts`);
       return;
     }
-    console.log(id);
   };
 
   deleteContact = contactId => {
-   this.setState(prevState => ({
-    contacts: prevState.contacts.filter(contact => contact.id !== contactId)
-   }))
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
   };
 
   filterContacts = e => {
@@ -69,7 +66,10 @@ class App extends Component {
         <Filter value={filter} onChange={this.filterContacts} />
 
         {this.state.contacts.length >= 1 && (
-          <ContactList contacts={filteredContacts} onDeleteContact={this.deleteContact}/>
+          <ContactList
+            contacts={filteredContacts}
+            onDeleteContact={this.deleteContact}
+          />
         )}
       </>
     );
