@@ -21,7 +21,6 @@
   margin-bottom: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(13, 85, 167);
-
 }
 
 .formBtn {
@@ -34,6 +33,6 @@
 }
 
 .formBtn:hover {
-    color: #fff;
-    background-color: rgb(13, 85, 167);
-  }
+  color: #fff;
+  background-color: rgb(13, 85, 167);
+}
